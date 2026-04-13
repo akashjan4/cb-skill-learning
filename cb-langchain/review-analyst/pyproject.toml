@@ -1,0 +1,11 @@
+[project]
+name = "review-analyst"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain>=1.2.15",
+    "langchain-ollama>=1.1.0",
+    "source>=1.2.0",
+]

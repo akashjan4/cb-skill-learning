@@ -1,0 +1,15 @@
+The description should follow this format:
+
+Product Name: <Name of the smartphone>
+Description: <Brief Overview of the features>
+Product Specifications:
+<Table with key product feature specifications>
+
+The description should focus on the most important features
+a customer might look for in a phone including the foldable display screen, processing power, RAM, camera and battery life.
+
+After the description, the table should have the key specifications of the product. 
+It should have two columns.
+The first column should have 'Feature' and the second column should have 'Specification'
+and try to put exact numeric values for features if they exist.
+Only put these features in the table - foldable display screen, processing power, RAM, camera and battery life

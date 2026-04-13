@@ -1,0 +1,47 @@
+What is LangChain?
+- Open framework & ecosystem to develop applications powered by LLMs using suit of tools 
+- > LangChain is the platform for agent engineering. AI teams at Replit, Clay, Rippling, Cloudflare, Workday, and more trust LangChain’s products to engineer reliable agents.
+- It works by breaking down the development process into modular component that can be "chained" together
+  - Chains is Sequence of calls. For example:
+    - 1. Take a user's question.
+    - 2. Search Database for relevant info.
+    - 3. Send that info + the question to the LLM
+    - 4. Translate the answer to french.
+- Its core framework consists of libraries to connect with LLMs using prompts and format outputs using output parser 
+- LangChain includes LangServe and LangSmith for deploying, evaluating and Monitoring LLMs
+  - LangGraph - Allow for combining multiple chains to build complex agents and more
+  - LangChain provide 100 different document loaders and also integration with other major providers to load unstructured documents like HTML, PDF, code
+    - Provides several transformation algorithms to split, chunk and transform larger documents into more manageable chunks for retrieval 
+- Tools and Agents with LangChain
+  - User asks "How many countries are there in the world?"
+  - Question goes to a `Model`
+  - Model start `thinking` "I need to find each country in the world and add them together". Chain of thought 
+  - I evokes the `tool` for Search. It's a separate component, called by the agent/LLM. 
+  - Return the response after making `Observations` "There are 195 countries in the world"
+- LangChain allows the use of chains, which are sequence of calls or execution steps
+  - These calls can be make to LLM, a tool, or a data preprocessing step.
+- LCEL - LangChain Expression Language
+  -----
+  - **ReAct (Reason + Act) loop**, which is the "brain" of an AI agent. While a standard LLM just predicts the next word, an Agent follows a cycle of thinking, acting, and observing. 
+    - The "Thought" (Chain of Thought)(CoT) - Is the process where the AI breaks a complex problem into smaller, logical steps before answering.
+      - With CoT: The AI says to itself, "I don't know the live count of countries. I should look it up. First, I'll search for UN members, then check for non-member states."
+      - Why it matters: It prevents "hallucinations" by forcing the AI to slow down and verify facts.
+    - Tool (Function calling)
+      - A Tool is an external capability given to the AI that it doesn't "know" natively
+    - The "Observations"
+      - This is the feedback loop. Once the tool runs, the raw data (the search results) is fed back into the AI.
+        - The AI looks at the observation and asks: "Does this answer the user's question, or do I need to do another search?"
+    -------
+    - Multi-agent Workflow
+      - Involves independent agents powered by LLMs connecting in a specific way
+      - Each agent can have its prompt, LLM, tools, and other custom code to collaborate with other agents if needed 
+
+
+-------
+# Installation (Using UV)
+- `uv init`
+- `uv venv`
+- `source .venv/bin/activate`
+- `uv add langchain`
+- `uv add langchain-<name>` [Check here](https://docs.langchain.com/oss/python/integrations/providers/overview)
+  - `uv add langchain-ollama`

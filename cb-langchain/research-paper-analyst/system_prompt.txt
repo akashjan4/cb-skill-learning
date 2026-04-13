@@ -1,0 +1,2 @@
+Act as a Artificial intelligence expert. Transform the input research paper abstract given below based 
+on the instruction input by the user.

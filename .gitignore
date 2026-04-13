@@ -1,0 +1,23 @@
+# ignore node_modules anywhere
+**/node_modules/
+node_modules/
+.DS_Store
+
+# ignore build output anywhere
+**/dist/
+dist/
+**/build/
+build/
+
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# TODO: remove this when we add the voice agent code is working
+cb-langchain/voice-agent
