@@ -1,23 +1,5 @@
-#### 1. **research-paper-analyst**-marketing-analyst**
-An AI-powered marketing assistant that creates product descriptions for retail 
-
-```
-cb-skill-learning/
-├── README.md (this file)
-└── cb-langchain/
-    ├── Docs/
-    ├── social-media-marketing-analyst/
-    │   ├── main.py
-    │   ├── product_factsheet.txt
-    │   ├── product_description.txt
-    │   └── requirements.txt
-    ├── code-review-agent/
-    ├── research-paper-analyst/
-    ├── review-analyst/
-    └── simple-agent/
-  ```
-
-Technical specifications. It uses LLM capabilities to transform fact sheets into engaging marketing content.
+#### 1. **social-media-marketing-analyst**
+An AI-powered marketing assistant that creates product descriptions for retail websites based on technical specifications. It uses LLM capabilities to transform fact sheets into engaging marketing content.
 
 **LangChain features used**:
 - `ChatPromptTemplate` - Define reusable prompt templates
@@ -37,7 +19,7 @@ An intelligent code review agent that analyzes code quality, suggests improvemen
 
 **Use case**: Automated code review and quality assurance for development workflows.
 
-#### 4. **research-paper-analyst**
+#### 3. **research-paper-analyst**
 An agent designed to analyze and summarize research papers, extract key insights, and answer questions about academic content.
 
 **LangChain features used**:
@@ -72,6 +54,18 @@ A foundational agent project demonstrating basic LangChain agent patterns, tool 
 - Agent loops - Understand agent reasoning and execution
 
 **Use case**: Learning LangChain basics and agent architecture.
+
+#### 6. **it-support-analyst**
+A multilingual IT support ticket analyzer that processes customer support messages, detects language, categorizes issues, and generates responses in the original language. Demonstrates language detection, categorization, and translation capabilities.
+
+**LangChain features used**:
+- `ChatOllama` - Integration with Ollama LLM models for processing
+- `PromptTemplate` - Structured prompt engineering for consistent outputs
+- `JsonOutputParser` - Parse LLM responses into structured JSON format
+- `Pydantic` models - Define response schema (orig_msg, orig_lang, category, trans_msg, response, trans_response)
+- `chain.map()` - Batch processing of multiple support messages
+
+**Use case**: Automate IT support ticket processing with multilingual support, categorization, and response generation.
 
 ---
 
@@ -164,20 +158,35 @@ uv cache prune
 ```
 cb-skill-learning/
 ├── README.md (this file)
+├── .gitignore
 └── cb-langchain/
-    ├── docs/
+    ├── Docs/
     ├── social-media-marketing-analyst/
     │   ├── main.py
     │   ├── product_factsheet.txt
     │   ├── product_description.txt
-    │   └── requirements.txt
-    ├── voice-agent/
-    │   ├── components/
-    │   └── requirements.txt
+    │   ├── pyproject.toml
+    │   └── uv.lock
     ├── code-review-agent/
+    │   ├── main.py
+    │   ├── pyproject.toml
+    │   └── uv.lock
     ├── research-paper-analyst/
+    │   ├── main.py
+    │   ├── pyproject.toml
+    │   └── uv.lock
     ├── review-analyst/
-    └── simple-agent/
+    │   ├── main.py
+    │   ├── pyproject.toml
+    │   └── uv.lock
+    ├── simple-agent/
+    │   ├── main.py
+    │   ├── pyproject.toml
+    │   └── uv.lock
+    └── it-support-analyst/
+        ├── main.py
+        ├── pyproject.toml
+        └── uv.lock
 ```
 ---
 
