@@ -125,6 +125,16 @@ chatgpt. invoke(chat_template.format())
 ## Streaming 
 
 - LangChain has its LLM APIs implement the Runnable[^3] interface, which comes with implementation of methods for streaming like stream and astream (async stream)
+
+
+## Built in Memory Constructs(LCEL) - 
+### These methods are now deprecated in newer version of LangChain. LangChain Classic have these methods
+- ConversationBufferMemory - ```This memory allows for storing messages of conversation history and then extracts the messages in a variable```
+- ConversationBufferWindowMemory - ```Stores only the last K messages of conversation history. This can be useful for keeping a sliding window of the most recent interactions with the LLM```
+- ConversationSummaryMemory - ```Summarizes the conversation history and stores the current summary in memory instead of actual conversation messages```
+- VectorStoreRetrieverMemory - ```Stores conversation history in a vector database and queries the top-K most relevant docs every time a new message or query is sent to the LLM. Doesn't care about the order of conversation```
+- ChatMessageHistory - ```Simple but highly configurable wrapper to store messages in an in-memory list. Easy to manage memory for multiple users and sessions```
+- SQLChatMessageHistory - ```Same as ChatMessageHistory but persists conversation in a SQL database. Very useful when managing multiple long conversations```
 ---
 [^1]: [LangChain Expression Language](https://blog.langchain.com/langchain-expression-language/)
 [^2]: It is a special method called **dunder method**. When you use the expression `object1 | object2`, Python internally calls object1. `__or__`(object2). The return value of the `__or__` method becomes the result of the expression.
