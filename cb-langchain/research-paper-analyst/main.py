@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage
-from langchain_classic.memory import ConversationBufferMemory
+from langchain_classic.memory import ConversationBufferMemory, ConversationBufferWindowMemory
 from langchain_classic.schema.runnable import RunnableLambda, RunnablePassthrough
 import pprint
 
@@ -21,7 +21,8 @@ chat_prompt = ChatPromptTemplate.from_messages(
 )
 
 messages = []
-memory = ConversationBufferMemory(return_messages=True)
+# memory = ConversationBufferMemory(return_messages=True)
+memory = ConversationBufferWindowMemory(k=2, return_messages=True)
 memory.load_memory_variables({})
 
 
