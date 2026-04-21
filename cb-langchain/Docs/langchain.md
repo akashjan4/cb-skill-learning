@@ -129,6 +129,7 @@ chatgpt. invoke(chat_template.format())
 
 ## Built in Memory Constructs(LCEL) - 
 ### These methods are now deprecated in newer version of LangChain. LangChain Classic have these methods
+### [Example Code](https://github.com/akashjan4/cb-skill-learning/blob/memory-construct-classic-langchain/cb-langchain/research-paper-analyst/main.py)
 - ConversationBufferMemory - ```This memory allows for storing messages of conversation history and then extracts the messages in a variable```
 - ConversationBufferWindowMemory - ```Stores only the last K messages of conversation history. This can be useful for keeping a sliding window of the most recent interactions with the LLM```
 - ConversationSummaryMemory - ```Summarizes the conversation history and stores the current summary in memory instead of actual conversation messages```
