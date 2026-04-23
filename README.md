@@ -84,7 +84,7 @@ A multilingual IT support ticket analyzer that processes customer support messag
 
 2. **Navigate to the project directory**:
    ```bash
-   cd cb-skill-learning/cb-langchain/<project-name>
+   cd cb-skill-learning/cb_langchain/<project-name>
    ```
 
 ### Running a Project
@@ -119,7 +119,7 @@ uv run main.py
 
 #### social-media-marketing-analyst
 ```bash
-cd cb-skill-learning/cb-langchain/social-media-marketing-analyst
+cd cb-skill-learning/cb_langchain/social-media-marketing-analyst
 
 # Install dependencies
 uv pip install -r requirements.txt
@@ -159,7 +159,7 @@ uv cache prune
 cb-skill-learning/
 ├── README.md (this file)
 ├── .gitignore
-└── cb-langchain/
+└── cb_langchain/
     ├── Docs/
     ├── social-media-marketing-analyst/
     │   ├── main.py

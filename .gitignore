@@ -20,4 +20,4 @@ wheels/
 .venv
 
 # TODO: remove this when we add the voice agent code is working
-cb-langchain/voice-agent
+cb_langchain/voice-agent
