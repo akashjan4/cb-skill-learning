@@ -93,4 +93,4 @@
 - MultiAgent Pattern
     - Tasks are divided into sub-tasks and given to the agents based a their role. CrewAI, AutoGen implement variations of multi-agent pattern.
 
-![image.png](./agent-pattern.webp)
+![image.png](./agent_pattern.webp)
