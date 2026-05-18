@@ -1,4 +1,5 @@
 import json
+import os
 
 def write_json_report(page_data, file_name = "report.json") -> None:
     """Writes the given data to a JSON file.
@@ -9,7 +10,10 @@ def write_json_report(page_data, file_name = "report.json") -> None:
         pages_list = list((page_data or {} ).values())
         sorted_pages = sorted(pages_list, key=lambda x: x.get("url", ""))
         __print_report(page_data)
-        with open(file_name, "w", encoding="utf-8") as f:
+        data_dir = os.path.join(os.path.dirname(__file__), "data")
+        os.makedirs(data_dir, exist_ok=True)
+        file_path = os.path.join(data_dir, file_name)
+        with open(file_path, "w", encoding="utf-8") as f:
             json.dump(sorted_pages, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"Error writing JSON report: {e}")
