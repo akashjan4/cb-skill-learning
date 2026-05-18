@@ -19,7 +19,7 @@ wheels/
 # Virtual environments
 .venv
 
-# TODO: remove this when we add the voice agent code is working
+# TODO: Temp ignore for local testing, remove when we add the voice agent code is working
 cb_langchain/voice-agent
 hidden_code
 eks-practice
