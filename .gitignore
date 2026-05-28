@@ -26,3 +26,4 @@ eks-practice
 ai_agents
 report.json
 **/data/
+**/cache/
