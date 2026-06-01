@@ -1,5 +1,6 @@
 import argparse
 import json
+
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from pathlib import Path
@@ -121,13 +122,19 @@ def search(query: str, top_k: int = 5):
     print(f"{index+1}. {result['title']} (score: {result['score']:.4f})")
     print(f"\n{result['description']}\n")
 
-def chunk_text(text: str, chunk_size: int = 200):
-  chunks = text.split(" ")
-  index = 1
+def chunk_text(text: str, chunk_size: int = 200, overlap: int = 0):
+  words = text.split()
+  result = []
+  start = 0
   print(f"Chunking {len(text)} characters")
-  while len(chunks) > 0:
-    chunk = " ".join(chunks[:chunk_size])
-    print(f"{index}. {chunk}\n")
-    chunks = chunks[chunk_size:]
-    index += 1
+  while start < len(words):
+    chunk = " ".join(words[start:start + chunk_size]) # list[start:end]  start is included / end is excluded
+    if len(chunk.split()) <= overlap:
+      break
+    result.append(chunk)
+    start += chunk_size - overlap
   
+  for i, chunk in enumerate(result, start=1):
+    print(f"{i}. {chunk}")
+
+
