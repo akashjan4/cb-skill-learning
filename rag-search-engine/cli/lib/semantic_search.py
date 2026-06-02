@@ -4,6 +4,7 @@ import json
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from pathlib import Path
+import re as re
 
 class SemanticSearch:
   def __init__(self):
@@ -138,3 +139,18 @@ def chunk_text(text: str, chunk_size: int = 200, overlap: int = 0):
     print(f"{i}. {chunk}")
 
 
+def semantic_chunk(text: str, max_chunk_size: int = 4, overlap: int = 0):
+  reg_ex = r"(?<=[.!?])\s+"
+  words = re.split(reg_ex, text)
+  start = 0
+  result = []
+  print(f"Semantically chunking {len(text)} characters")
+  while start < len(words):
+    chunk = " ".join(words[start:start+max_chunk_size])
+    if len(re.split(reg_ex, chunk)) <= overlap:
+      break
+    result.append(chunk)
+    start += max_chunk_size - overlap
+  
+  for i in range(len(result)):
+    print(f"{i+1}. {result[i]}\n")
