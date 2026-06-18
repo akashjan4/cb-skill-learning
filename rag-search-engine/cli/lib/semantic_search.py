@@ -141,16 +141,25 @@ def chunk_text(text: str, chunk_size: int = 200, overlap: int = 0):
 
 def semantic_chunk(text: str, max_chunk_size: int = 4, overlap: int = 0):
   reg_ex = r"(?<=[.!?])\s+"
-  words = re.split(reg_ex, text)
+  text = text.strip()
+  if not text:
+    return []
+  
+  words = re.split(reg_ex, text) or []
   start = 0
   result = []
+
   print(f"Semantically chunking {len(text)} characters")
+
   while start < len(words):
-    chunk = " ".join(words[start:start+max_chunk_size])
+    chunk = " ".join(words[start:start+max_chunk_size]).strip()
     if len(re.split(reg_ex, chunk)) <= overlap:
       break
-    result.append(chunk)
+    if chunk:
+      result.append(chunk)
     start += max_chunk_size - overlap
   
   for i in range(len(result)):
     print(f"{i+1}. {result[i]}\n")
+    
+  return result
