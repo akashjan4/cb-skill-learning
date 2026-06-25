@@ -101,3 +101,16 @@ Ensure you have [uv](https://docs.astral.sh/uv/) installed.
 *   **TF-IDF Score**: `.venv/bin/python cli/keyword_search_cli.py tfidf 1562 toy`
 *   **BM25 IDF Score**: `.venv/bin/python cli/keyword_search_cli.py bm25idf toy`
 *   **BM25 TF Score**: `.venv/bin/python cli/keyword_search_cli.py bm25tf 1562 toy`
+*   
+
+
+
+
+https://openai.com/index/clip/
+https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.open
+https://sbert.net/
+https://docs.python.org/3/library/mimetypes.html#mimetypes.guess_type
+https://docs.cohere.com/reference/about
+https://www.nltk.org/
+https://jina.ai/news/late-chunking-in-long-context-embedding-models/
+https://huggingface.co/spaces/mteb/leaderboard
